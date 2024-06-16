@@ -52,7 +52,11 @@ const LoginScreen = ({ navigation }) => {
             <View style={{marginRight:20}}>
                 <Image source={facebookIcon}/>
             </View>
-            
+        </View>
+
+        <View style={{flexDirection: 'row', marginTop: 40, paddingHorizontal:80}}>
+          <Text style={{color:'#AFB0B6', fontSize: 14}}>Haven't an account?</Text>
+          <Text style={{color:'#356899', fontSize: 14, fontWeight: 'bold'}}> Register</Text>
         </View>
         
     </View>
