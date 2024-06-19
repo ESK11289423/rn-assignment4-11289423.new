@@ -5,12 +5,18 @@ const appleIcon = require('./assets/apple.png')
 const googleIcon = require('./assets/google.png')
 const facebookIcon = require('./assets/facebook.png')
 
+export let exportName = '';
+export let exportEmail = '';
+
 const LoginScreen = ({ navigation }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const handleLogin = () => {
-    navigation.navigate('Home', { name, email });
+    exportName = name;
+    exportEmail = email;
+
+    navigation.navigate('Home');
   };
 
   return (
@@ -22,13 +28,14 @@ const LoginScreen = ({ navigation }) => {
         style={styles.input}
         placeholder="Name"
         value={name}
-        onChangeText={setName}
+        onChangeText={(name) => setName(name)}
       />
       <TextInput
         style={styles.input}
         placeholder="Email"
         value={email}
-        onChangeText={setEmail}
+        onChangeText={(email) => setEmail(email)}
+
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Log in</Text>
